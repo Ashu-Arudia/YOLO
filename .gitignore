@@ -1,0 +1,46 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+
+# YOLO models (large files)
+ai_engine/models/*.pt
+ai_engine/models/*.onnx
+
+# Datasets (large)
+datasets/raw/
+datasets/processed/
+
+# Storage
+storage/videos/
+storage/processed/
+storage/frames/
+
+# Environment
+.env
+*.env.local
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
