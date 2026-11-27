@@ -1,0 +1,8 @@
+<resources>
+    <color name="bg_base">#090D1A</color>
+    <color name="bg_surface">#0F1629</color>
+    <color name="accent_blue">#3B82F6</color>
+    <color name="accent_green">#10B981</color>
+    <color name="text_primary">#E2E8F0</color>
+    <color name="text_secondary">#7C91B5</color>
+</resources>

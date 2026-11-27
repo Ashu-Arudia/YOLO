@@ -143,7 +143,7 @@ class TeamClassifier:
 
     def _fit(self) -> None:
         """Fit K-Means on accumulated colour samples."""
-        data = np.array(self._sample_colors, dtype=np.float32)
+        data = np.array(self._sample_colors, dtype=np.float64)
         n_clusters = min(TEAM_CLUSTERS, len(data))
         self._kmeans = KMeans(n_clusters=n_clusters, n_init=10, random_state=42)
         self._kmeans.fit(data)
@@ -162,5 +162,6 @@ class TeamClassifier:
 
     def _predict_team(self, color: np.ndarray) -> TeamLabel:
         assert self._kmeans is not None
-        label_idx = int(self._kmeans.predict(color.reshape(1, -1))[0])
+        c = np.asarray(color, dtype=np.float64).reshape(1, -1)
+        label_idx = int(self._kmeans.predict(c)[0])
         return self._cluster_labels.get(label_idx, "unknown")

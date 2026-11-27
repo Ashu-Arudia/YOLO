@@ -160,7 +160,7 @@ class PitchDetector:
         )
         if raw is None:
             return []
-        return [(int(l[0]), int(l[1]), int(l[2]), int(l[3])) for l in raw[:, 0]]
+        return [(int(x1), int(y1), int(x2), int(y2)) for x1, y1, x2, y2 in raw.reshape(-1, 4)]
 
     def _estimate_homography(self) -> Optional[np.ndarray]:
         """

@@ -5,6 +5,5 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-// ...existing code...
-rootProject.name = "YOLO"
+rootProject.name = "SportsVision"
 include ':app'

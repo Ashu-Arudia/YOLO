@@ -56,11 +56,11 @@ class _BallKalman:
             )
             self._initialised = True
         self._kf.correct(meas)
-        pred = self._kf.predict()
+        pred = self._kf.predict().flatten()
         return float(pred[0]), float(pred[1])
 
     def predict(self) -> BallPos:
-        pred = self._kf.predict()
+        pred = self._kf.predict().flatten()
         return float(pred[0]), float(pred[1])
 
     def reset(self) -> None:
